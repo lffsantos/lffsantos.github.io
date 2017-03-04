@@ -1,0 +1,18 @@
+[
+	{
+		"slug": "eventex",
+		"name": "Eventex",
+		"image": "eventex.png",
+		"url": "https://eventex-lucasfarias.herokuapp.com/",
+		"date": "Out 2015",
+		"tags": ["Django","Python"]
+	},
+	{
+        "slug": "demo-django-rest",
+		"name": "Demo Django Rest Framework",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/lffsantos/demo_django_rest_framework",
+		"date": "Fev 2017",
+		"tags": ["Python","Django", "Django Rest Framework"]
+	}
+]
