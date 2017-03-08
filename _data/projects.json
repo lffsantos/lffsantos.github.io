@@ -14,5 +14,21 @@
 		"url": "https://github.com/lffsantos/demo_django_rest_framework",
 		"date": "Fev 2017",
 		"tags": ["Python","Django", "Django Rest Framework"]
+	},
+    {
+        "slug": "service-api",
+		"name": "Service API to itindublin",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/lffsantos/service-api",
+		"date": "nov 2016",
+		"tags": ["Python","Flask", "Rest"]
+	},
+    {
+        "slug": "Boilerplate",
+		"name": "Simple Boilerplate django",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/lffsantos/boilerplatedjango",
+		"date": "Fev 2017",
+		"tags": ["Python","Django", "template"]
 	}
 ]
