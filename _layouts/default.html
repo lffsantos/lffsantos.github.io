@@ -7,6 +7,7 @@ layout: compress
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/static/manifest.json">
     <link rel="shortcut icon" href="/static/img/lucas.jpg" />
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
     <meta name="author" content="{{ site.author }}" />
@@ -15,7 +16,42 @@ layout: compress
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
     <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
     <meta content="{{ site.title }}" property="og:site_name">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+        <script>
 
+            var OneSignal = window.OneSignal || [];
+
+            OneSignal.push(function() {
+              // Be sure to call this code *before* you initialize the web SDK
+
+              // This registers the workers at the root scope, which is allowed by the HTTP header "Service-Worker-Allowed: /"
+              OneSignal.SERVICE_WORKER_PARAM = { scope: '/static/' };
+              OneSignal.on('subscriptionChange', function(event) {
+                 console.log("The user's subscription state is now:", event);
+              });
+              OneSignal.registerForPushNotifications();
+	          OneSignal.setSubscription(true);
+              OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+                if (isEnabled)
+                  console.log("Push notifications are enabled!");
+                else
+                  console.log("Push notifications are not enabled yet.");
+              });
+              OneSignal.getUserId(function(userId) {
+                console.log("OneSignal User ID:", userId);
+                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316
+              });
+            });
+            OneSignal.push(["init", {
+              appId: "0e4c7231-7107-4532-824d-7468a97cc43c",
+              allowLocalhostAsSecureOrigin: true,
+              autoRegister: false, /* Set to true to automatically prompt visitors */
+              notifyButton: {
+                enable: false /* Set to false to hide */
+              },
+              path: '/static/' /* A trailing slash is required */,
+            }]);
+        </script>
     {% if page.noindex %}
       <meta name="robots" content="noindex">
     {% endif %}
