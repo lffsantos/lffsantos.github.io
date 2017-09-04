@@ -165,6 +165,17 @@ layout: compress
     <script src="/static/js/thickbox-compressed.js"></script>
     <script src="/static/js/projects.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
-
+    <script>
+         var OneSignal = window.OneSignal || [];
+         OneSignal.push(["init", {
+              appId: "0e4c7231-7107-4532-824d-7468a97cc43c",
+              allowLocalhostAsSecureOrigin: true,
+              autoRegister: false, /* Set to true to automatically prompt visitors */
+              notifyButton: {
+                enable: false /* Set to false to hide */
+              },
+              path: '/static/' /* A trailing slash is required */
+            }]);
+    </script>
   </body>
 </html>
