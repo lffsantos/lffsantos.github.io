@@ -187,6 +187,14 @@ layout: compress
                   /* cancelButtonText limited to 15 characters */
                   cancelButtonText: "No Obrigado"
               },
+              text: {
+                    'tip.state.unsubscribed': 'Inscreva-se para receber notificações.',
+                    'tip.state.subscribed': "Você está inscrito para receber notificações.",
+                    'tip.state.blocked': "Você bloqueou notificações",
+                    'message.action.subscribed': "Obrigado por inscrever-se, se inscreva também em seus outros dispositivos (Android, Desktop...)",
+                    'message.action.resubscribed': "Você está inscrito para receber notificações",
+                    'message.action.unsubscribed': "Você não irá receber notificações de novo",
+              },
               path: '/static/' /* A trailing slash is required */
             }]);
          OneSignal.push(["sendTag", "id_user", document.getElementById('send_id').value]);
