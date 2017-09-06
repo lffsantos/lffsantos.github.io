@@ -175,6 +175,15 @@ layout: compress
               notifyButton: {
                 enable: true /* Set to false to hide */
               },
+              promptOptions: {
+                  /* These prompt options values configure both the HTTP prompt and the HTTP popup. */
+                  /* actionMessage limited to 90 characters */
+                  actionMessage: "Você concorda em receber notificações.",
+                  /* acceptButtonText limited to 15 characters */
+                  acceptButtonText: "Sim",
+                  /* cancelButtonText limited to 15 characters */
+                  cancelButtonText: "No Obrigado"
+              },
               path: '/static/' /* A trailing slash is required */
             }]);
          OneSignal.push(["sendTag", "id_user", document.getElementById('send_id').value]);
