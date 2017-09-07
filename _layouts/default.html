@@ -171,9 +171,10 @@ layout: compress
          OneSignal.push(["init", {
               appId: "68f401e4-066b-45fa-9098-b7ac15c008ef",
               allowLocalhostAsSecureOrigin: true,
-              autoRegister: true, /* Set to true to automatically prompt visitors */
+              autoRegister: false, /* Set to true to automatically prompt visitors */
               notifyButton: {
-                enable: false, /* Set to false to hide */
+                showCredit: false, /* Hide the OneSignal logo */
+                enable: true, /* Set to false to hide */
                 text: {
                  'tip.state.unsubscribed': 'Inscreva-se para receber notificações.',
                  'tip.state.subscribed': "Você está inscrito para receber notificações.",
@@ -186,6 +187,13 @@ layout: compress
                  'dialog.main.button.unsubscribe': 'DESINSCREVA-SE',
                  'dialog.blocked.title': 'Desbloqueie notificações',
                  'dialog.blocked.message': "Siga essas instruções para habilitar notificações:"
+                },
+                /* HIDE SUBSCRIPTION BELL WHEN USER SUBSCRIBED */
+                displayPredicate: function() {
+                    return OneSignal.isPushNotificationsEnabled()
+                        .then(function(isPushEnabled) {
+                            return !isPushEnabled;
+                        });
                 }
               },
               httpPermissionRequest: {
