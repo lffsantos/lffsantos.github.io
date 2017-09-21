@@ -200,7 +200,19 @@ layout: compress
                 enable: true
               },
               promptOptions: {
-                  autoAcceptTitle: 'Click Allow'
+                  autoAcceptTitle: 'Click Allow',
+                   /* These prompt options values configure both the HTTP prompt and the HTTP popup. */
+                  /* actionMessage limited to 90 characters */
+                  actionMessage: "Você concorda em receber notificações.",
+                  /* acceptButtonText limited to 15 characters */
+                  acceptButtonText: "Sim",
+                  /* cancelButtonText limited to 15 characters */
+                  cancelButtonText: "No Obrigado",
+                  exampleNotificationTitle: 'Titulo MSG',
+                 /* Example notification message */
+                  exampleNotificationMessage: 'Conteudo da Mensagem',
+                exampleNotificationCaption: ''
+                /* Text below example notification, limited to 50 characters * */
               },
               path: '/static/' /* A trailing slash is required */
             }]);
